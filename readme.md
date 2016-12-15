@@ -1,27 +1,33 @@
-# Laravel PHP Framework
+# 4-Ads
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+4-Ads is a web application to buy and sell anything you can think of your old mobile phone, your used sofa, your car, or even your flat. It might even help you find a new job!
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+* **Abd El-Rahman Anwer Hellawy** -  [El-Hellawy](https://github.com/Elhellawy)
+* **Sabry Ragab** -  [Sabry Ragab](https://github.com/sabryRagab)
+* **Ahmed Said** -  [Ahmed Said](https://github.com/3naba)
+* **Osama Al-Shafay** -  [Osama Al-Shafay](https://github.com/osossh)
 
-## Security Vulnerabilities
+## Installation
+1. git clonehttps://github.com/sabryRagab/4-Ads 4-Ads
+2. cd 4-Ads
+3. composer install
+4. copy .env.example file and change the new file name to .env
+5. The next thing you should do after that is to fill .env with your configuration data such that:
+6. php artisan migrate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+##### For step 5 you can do something like that:
+- APP_KEY=base64:SabryCP7vzRwF6ZY00PxL03NpeLtHrOPOZoxzsGZbrs=
+- APP_URL=http://localhost
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=database_name
+- DB_USERNAME=user_name
+- DB_PASSWORD=database_password
+- ..
