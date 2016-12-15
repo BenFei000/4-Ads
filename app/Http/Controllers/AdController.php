@@ -21,14 +21,14 @@ class AdController extends Controller
     /**
     * Show view of Create a new advertisement
     */
-    public function show_create() {
+    public function showCreateAd() {
       return view('ads.create');
     }
 
    /**
    * Create a new advertisement
    */
-   public function create() {
+   public function createAd() {
      return "Backend of create advertisement";
    }
 }

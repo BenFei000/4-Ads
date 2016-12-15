@@ -81,8 +81,11 @@
                     <ul class="dropdown-menu" role="menu" style=" min-width: 0 !important;">
                       <li><a href="#"><i class="fa fa-tachometer"></i> Ads</a></li>
                       <li><a href="#"><i class="fa fa-envelope"></i> messages</a></li>
-                      <li><a href="#"><i class="fa fa-btn fa-cog"></i>Settings</a></li>
-                      <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                      <li><a href="#"><i class="fa fa-btn fa-cog"></i> Settings</a></li>
+                      @if(Auth::user()->admin)
+                        <li><a href="{{ url('/add/category') }}"><i class="fa fa-btn fa-plus"></i> Add Category</a></li>
+                      @endif
+                      <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                     </ul>
                   </li>
                 @endif

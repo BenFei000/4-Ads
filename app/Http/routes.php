@@ -23,6 +23,12 @@ Route::get('/search', function () {
     return view('search.box');
 });
 
-Route::get('/create/advertisement', 'AdController@show_create');
+Route::get('/create/advertisement', 'AdController@showCreateAd');
 
-Route::post('/create/advertisement', 'AdController@create');
+Route::post('/create/advertisement', 'AdController@createAd');
+
+Route::get('/add/category', 'AdminController@showAddCategory');
+
+Route::post('/add/main/category', 'AdminController@addMainCategory');
+
+Route::post('/add/sub/category', 'AdminController@addSubCategory');
