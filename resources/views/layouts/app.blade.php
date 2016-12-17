@@ -68,26 +68,10 @@
                   <li><a href="{{ url('/login') }}"><i class="fa fa-lock"></i> Login</a></li>
                   <li><a href="{{ url('/search') }}"><i class="fa fa-search"></i> Search</a></li>
                 @else
-                  <li><a href="#"><i class="fa fa-user"></i>{{ Auth::user()->name }} </a></li>
-                  <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                  <li><a href="{{url('/home')}}"><i class="fa fa-user"></i>{{ Auth::user()->name }} </a></li>
                   <li><a href="{{ url('/create/advertisement') }}"><i class="fa fa-plus"></i> Place a free Ad</a></li>
                   <li><a href="{{ url('/search') }}"><i class="fa fa-search"></i> Search</a></li>
-
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                      <span class="caret"></span> More
-                    </a>
-
-                    <ul class="dropdown-menu" role="menu" style=" min-width: 0 !important;">
-                      <li><a href="#"><i class="fa fa-tachometer"></i> Ads</a></li>
-                      <li><a href="#"><i class="fa fa-envelope"></i> messages</a></li>
-                      <li><a href="#"><i class="fa fa-btn fa-cog"></i> Settings</a></li>
-                      @if(Auth::user()->admin)
-                        <li><a href="{{ url('/add/category') }}"><i class="fa fa-btn fa-plus"></i> Add Category</a></li>
-                      @endif
-                      <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
-                    </ul>
-                  </li>
+                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a></li>
                 @endif
 
               </ul>
@@ -96,6 +80,62 @@
         </div>
       </div>
     </div><!--/header-middle-->
+
+    @if(!Auth::guest())
+      <div class="header-bottom"><!--header-bottom-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-9">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+              <div class="mainmenu pull-left">
+                <ul class="nav navbar-nav collapse navbar-collapse">
+                  <li><a href="{{url('/home')}}" class="active">Home</a></li>
+                  <li><a href="#">Account</a></li>
+                  <li class="dropdown"><a href="#">Ads<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="#">Active</a></li>
+                      <li><a href="">Pending</a></li>
+                      <li><a href="#">Rejected</a></li>
+                      <li><a href="#">Wishlist <i class="fa fa-star"></i> </a></li>
+
+
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a href="#">Messages<i class="fa fa-angle-down"></i></a>
+                    <ul role="menu" class="sub-menu">
+                      <li><a href="#">Inbox</a></li>
+                      <li><a href="#">sent</a></li>
+                    </ul>
+                  </li>
+
+                  @if(Auth::user()->admin)
+                    <li class="dropdown"><a href="#">Admin Tasks<i class="fa fa-angle-down"></i></a>
+                      <ul role="menu" class="sub-menu">
+                        <li><a href="#">Review Ads</a></li>
+                        <li><a href="{{ url('/add/category') }}"> Add Category</a></li>
+                      </ul>
+                    </li>
+                  @endif
+
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="search_box pull-right">
+                <input type="text" placeholder="Search"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--/header-bottom-->
+    @endif
   </header><!--/header-->
 
   <br><br>
