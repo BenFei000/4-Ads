@@ -16,6 +16,15 @@ class SubCategory extends Model
   protected $table = 'sub_categories';
 
   /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+      'name',
+  ];
+
+  /**
   * Get the MainCategory that owns the SubCategory.
   */
   public function mainCategory()

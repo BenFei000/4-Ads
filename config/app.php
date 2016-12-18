@@ -155,6 +155,11 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
+        /*
+        * Easy Flash Messages for Laravel Apps
+        */
+        Laracasts\Flash\FlashServiceProvider::class,
 
     ],
 

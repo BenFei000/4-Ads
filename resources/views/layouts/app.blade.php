@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta name="csrf-token" content="{!! csrf_token() !!}">
   <title>@yield('title')</title>
 
   <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -116,7 +117,7 @@
                   </li>
 
                   @if(Auth::user()->admin)
-                    <li class="dropdown"><a href="#">Admin Tasks<i class="fa fa-angle-down"></i></a>
+                    <li class="dropdown"><a href="#">Admin Panel<i class="fa fa-angle-down"></i></a>
                       <ul role="menu" class="sub-menu">
                         <li><a href="#">Review Ads</a></li>
                         <li><a href="{{ url('/add/category') }}"> Add Category</a></li>
@@ -217,12 +218,16 @@
   </footer><!--/Footer-->
 
 
-
+  <!-- Layouts and designs js code -->
   <script src="{{url('js/jquery.js')}}"></script>
   <script src="{{url('js/bootstrap.min.js')}}"></script>
   <script src="{{url('js/jquery.scrollUp.min.js')}}"></script>
   <script src="{{url('js/price-range.js')}}"></script>
   <script src="{{url('js/jquery.prettyPhoto.js')}}"></script>
   <script src="{{url('js/main.js')}}"></script>
+
+  <!-- Application js code -->
+  <script src="{{url('js/ads/showSubCategories.js')}}"></script>
+
 </body>
 </html>

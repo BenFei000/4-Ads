@@ -32,3 +32,5 @@ Route::get('/add/category', 'AdminController@showAddCategory');
 Route::post('/add/main/category', 'AdminController@addMainCategory');
 
 Route::post('/add/sub/category', 'AdminController@addSubCategory');
+
+Route::post('/get/sub/categories', 'AdController@getSubCategories');

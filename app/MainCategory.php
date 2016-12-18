@@ -17,6 +17,15 @@ class MainCategory extends Model
   protected $table = 'main_categories';
 
   /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [
+      'name',
+  ];
+
+  /**
   * Get the mainCategory's SubCategories.
   */
    public function subCategories()
@@ -31,5 +40,5 @@ class MainCategory extends Model
   {
       return $this->hasMany(Advertisement::class);
   }
-  
+
 }
