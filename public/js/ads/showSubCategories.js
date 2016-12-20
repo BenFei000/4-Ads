@@ -48,10 +48,19 @@ $( document ).ready(function() {
 
     $('#main_category').on('change', function() {
       var main_category_id = this.value;
-      // If sub_category is exist in the page && type select
-      if( $('#sub_category').length && $("#sub_category").is("select")) {
-        fillSubCategorySelectOptions(main_category_id);
+      if(!main_category_id) {
+        $('#sub_category').empty();
+        $('#sub_category').append($('<option>', {
+            value: "",
+            text: 'None'
+        }));
+      }else {
+          // If sub_category is exist in the page && type select
+          if( $('#sub_category').length && $("#sub_category").is("select")) {
+            fillSubCategorySelectOptions(main_category_id);
+          }
       }
+
     });
 
 });

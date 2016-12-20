@@ -52,7 +52,8 @@ class AdController extends Controller
            'city'  =>'required| max:255',
            'owner_name' =>'max:255',
            'email' =>'email| max:255',
-           'mobile' =>'required| min:11| max:11'
+           'mobile' =>'required| min:11| max:11',
+           'photo' => 'image | mimes:jpeg,jpg,png'
       ]);
 
        $advertisment = new Advertisement();
@@ -64,18 +65,21 @@ class AdController extends Controller
        $advertisment->sub_category_id = $request->sub_category;
        $advertisment->price=$request['price'];
        $advertisment->city=$request['city'];
-       if($photo=$request->file('photo')){
-           $advertisment->photo = $photo->getClientOriginalName();
-           $photo->move('ads', $advertisment->photo);
-       }
        $advertisment->owner_name = $request['owner_name'];
        $advertisment->email = $request['email'];
        $advertisment->mobile = $request['mobile'];
        if(!$request['is_new']) {
          $advertisment->is_new = 0;
        }
+
        // Add advertisment to the user's Ads list
        $request->user()->advertisements()->save($advertisment);
+       if($photo=$request->file('photo')){
+           $advertisment->photo = $advertisment->id. '.' .$photo->getClientOriginalExtension();
+           $photo->move('ads', $advertisment->photo);
+           $advertisment->update();
+       }
+
        flash('Advertisment created successfully.', 'success');
        return redirect('/create/advertisement');
    }

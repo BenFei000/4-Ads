@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
+
+Route::get('/filter/ads/subcategory/{id}', 'WelcomeController@subCategoryFiltering');
+
+Route::get('/filter/ads/maincategory/{id}', 'WelcomeController@mainCategoryFiltering');
 
 Route::auth();
 
